@@ -1,5 +1,6 @@
 package com.example.myapp4.View.Adapter;
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapp4.Data.Model.Item;
@@ -40,6 +42,9 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
                 int clickedPosition = holder.getAdapterPosition();
                 Toast.makeText(v.getContext(), "Item " + (clickedPosition + 1), Toast.LENGTH_SHORT).show();
                 Log.d("RecyclerView", "Item " + (clickedPosition + 1));
+                Bundle bundle = new Bundle();
+                bundle.putString("itemId", item.getText());
+                holder.itemView.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.blankFragment, bundle));
             }
         });
     }

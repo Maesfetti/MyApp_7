@@ -7,10 +7,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".View.FirstFragment">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textSpecific"
+        android:text=""
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textCommon"
+        android:text=""
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textSpecific"/>
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textCommon"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textSH"
+        android:text=""
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_view"/>
     <LinearLayout
         android:id="@+id/linearlay"
         android:layout_width="200dp"
-        android:layout_height="300dp"
+        android:layout_height="350dp"
         android:layout_marginTop="250dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,6 +70,12 @@
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:text="RecyclerFrag"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/CommonFilesDSButton"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="CommonFilesDS"
             app:layout_constraintStart_toStartOf="parent" />
     </LinearLayout>
 

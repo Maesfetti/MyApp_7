@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_FirstFrag_to_recyclerFragment"
             app:destination="@id/recyclerFragment" />
+        <action
+            android:id="@+id/action_FirstFrag_to_blankFragment"
+            app:destination="@id/blankFragment" />
     </fragment>
 
     <fragment
@@ -36,5 +39,11 @@
         <action
             android:id="@+id/from_recycler_to_first"
             app:destination="@id/FirstFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.myapp4.View.BlankFragment"
+        android:label="fragment_recycler"
+        tools:layout="@layout/fragment_blank" >
     </fragment>
 </navigation>

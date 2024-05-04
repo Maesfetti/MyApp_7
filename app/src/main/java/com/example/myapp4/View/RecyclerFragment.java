@@ -19,6 +19,8 @@ import com.example.myapp4.ViewModel.ItemViewModel;
 import com.example.myapp4.R;
 import com.example.myapp4.View.Adapter.RecycleAdapter;
 
+import java.util.HashMap;
+
 public class RecyclerFragment extends Fragment {
     public RecyclerFragment() {
         super(R.layout.fragment_recycler);
@@ -31,14 +33,6 @@ public class RecyclerFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recycleView);
         RecycleAdapter adapter = new RecycleAdapter(getContext(), listItems.getListItems().getValue());
 
-        /*listItems = new ItemViewModel(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getActivity().getApplication()));
-
-
-        //RecycleAdapter adapter = new RecycleAdapter(getContext(), listItems.getListItems().getValue());
-        RecycleAdapter adapter = new RecycleAdapter(getContext(), listItems.getListItems().getValue().observe(getViewLifecycleOwner(), items -> {
-            adapter.notifyDataSetChanged();
-        });*/
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
         view.findViewById(R.id.returnFromRecycle).setOnClickListener(new View.OnClickListener() {
@@ -47,6 +41,7 @@ public class RecyclerFragment extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.from_recycler_to_first);
             }
         });
+
         assert getArguments() != null;
         String result = getArguments().getString("recyclerKey");
         Toast.makeText(getContext(), result, Toast.LENGTH_LONG).show();
